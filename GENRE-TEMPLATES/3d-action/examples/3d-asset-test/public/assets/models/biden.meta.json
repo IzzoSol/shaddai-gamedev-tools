@@ -1,0 +1,14 @@
+{
+  "slug": "biden",
+  "name": "toon Joe Biden (animated)",
+  "source": "sketchfab",
+  "sourceId": "dd92c87473734213b7a9672402d408a3",
+  "author": "vicente betoret ferrero (@deathcow)",
+  "license": "CC Attribution",
+  "faces": 50000,
+  "viewUrl": "https://sketchfab.com/3d-models/toon-joe-biden-animated-dd92c87473734213b7a9672402d408a3",
+  "animations": 1,
+  "clipNames": ["mixamo.com"],
+  "downloadedAt": "2025-02-25T20:40:00.000Z",
+  "modelPath": "biden.glb"
+}

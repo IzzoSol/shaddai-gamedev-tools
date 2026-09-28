@@ -1,0 +1,22 @@
+{
+  "slug": "trump",
+  "name": "Donald Trump 1 - Motion Moves Plask 3D",
+  "source": "sketchfab",
+  "sourceId": "e81df3dbc0f9475293131a159285b5f3",
+  "author": "denysalmaral",
+  "license": "CC Attribution",
+  "faces": 1266,
+  "viewUrl": "https://sketchfab.com/3d-models/donald-trump-1-motion-moves-plask-3d-ver-1-e81df3dbc0f9475293131a159285b5f3",
+  "animations": 7,
+  "clipNames": [
+    "root|trump_rigCharRoot|Take 001|BaseLayer_trump_rigCharRoot",
+    "root|TrumpClap1_BipTrump",
+    "root|Trumpdance1_BipTrump",
+    "root|TrumpPoint_BipTrump",
+    "root|TrumpStillLook_BipTrump",
+    "root|TrumpTalk1_BipTrump",
+    "root|TrumpTwist_BipTrump"
+  ],
+  "downloadedAt": "2025-02-25T20:40:00.000Z",
+  "modelPath": "trump.glb"
+}
