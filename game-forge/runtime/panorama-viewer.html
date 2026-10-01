@@ -1,0 +1,49 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Panorama viewer</title>
+<style>html,body{margin:0;height:100%;background:#06080b;overflow:hidden}canvas{display:block;touch-action:none}
+#hint{position:fixed;left:12px;bottom:10px;color:#8a96a5;font:13px system-ui}</style>
+<div id="hint">Drag to look · scroll to zoom · drop a 2:1 image here</div>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 100);
+
+const sphere = new THREE.Mesh(new THREE.SphereGeometry(50, 64, 32).scale(-1, 1, 1), new THREE.MeshBasicMaterial());
+scene.add(sphere);
+
+function show(url) {
+  new THREE.TextureLoader().load(url, (t) => {
+    t.colorSpace = THREE.SRGBColorSpace;
+    sphere.material.map = t; sphere.material.needsUpdate = true;
+    const r = t.image.width / t.image.height;
+    if (Math.abs(r - 2) > 0.02) document.getElementById('hint').textContent = 'Warning: image is not 2:1 — it will look stretched';
+  });
+}
+show(new URLSearchParams(location.search).get('src') || 'sky.jpg');
+
+let yaw = 0, pitch = 0, drag = null;
+const resize = () => { renderer.setSize(innerWidth, innerHeight); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); };
+addEventListener('resize', resize); resize();
+
+const el = renderer.domElement;
+el.addEventListener('pointerdown', (e) => { drag = { x: e.clientX, y: e.clientY }; el.setPointerCapture(e.pointerId); });
+el.addEventListener('pointerup', () => { drag = null; });
+el.addEventListener('pointermove', (e) => {
+  if (!drag) return;
+  const k = camera.fov / innerHeight;                       // degrees per pixel → feels the same at any zoom
+  yaw -= (e.clientX - drag.x) * k * Math.PI / 180;
+  pitch = Math.max(-1.48, Math.min(1.48, pitch + (e.clientY - drag.y) * k * Math.PI / 180));
+  drag = { x: e.clientX, y: e.clientY };
+});
+el.addEventListener('wheel', (e) => { camera.fov = Math.max(30, Math.min(100, camera.fov + e.deltaY * 0.05)); camera.updateProjectionMatrix(); e.preventDefault(); }, { passive: false });
+addEventListener('dragover', (e) => e.preventDefault());
+addEventListener('drop', (e) => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f) show(URL.createObjectURL(f)); });
+
+renderer.setAnimationLoop(() => { camera.rotation.set(pitch, yaw, 0, 'YXZ'); renderer.render(scene, camera); });
+</script>

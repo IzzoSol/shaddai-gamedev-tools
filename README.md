@@ -22,15 +22,13 @@ A meticulously organized discipline-by-discipline library, instant AI-driven sca
 
 ## 🚀 Quick Start (Pick Your Path)
 
-### Path 1: "Just Build Me a Game" → GENRE-TEMPLATES
+### Path 1: "Just Build Me a Game" → GAME FORGE
 
 ```bash
-cp -r GENRE-TEMPLATES/3d-action/ my-game
-cd my-game
-npm install
-npm run dev
-# That's it — you have a playable game framework
+node game-forge/ecs/world.test.mjs      # tested ECS, fixed-step loop, collision, clips, input
 ```
+
+Build with the modules in `game-forge/` and read its 15 guides.
 
 **Start here:** [GENRE-TEMPLATES/START-HERE.md](./GENRE-TEMPLATES/START-HERE.md)
 
@@ -141,7 +139,7 @@ Every agent in the SHADDAI system is wired into this repo via MCP:
 
 ## 📄 License
 
-**MIT License © 2026 SHADDAI Empire.** Free to use, fork, and build with — just keep the copyright notice. Bundled 3D assets carry their own permissive licenses — see [ATTRIBUTION.md](./GENRE-TEMPLATES/3d-action/examples/3d-asset-test/public/assets/models/ATTRIBUTION.md).
+**MIT License © 2026 SHADDAI Empire.** Free to use, fork, and build with — just keep the copyright notice. This repository contains no bundled 3D models or third-party game assets.
 
 ---
 

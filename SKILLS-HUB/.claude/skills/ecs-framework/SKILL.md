@@ -68,5 +68,5 @@ const animate = (delta) => {
 
 ## References
 
-- [ECS Architecture Patterns](../../../FLAT-LIBRARY/ecs-architecture/)
-- [Component Patterns](../../../FLAT-LIBRARY/ecs-architecture/ecs/component-patterns.md)
+- [Entities, components and systems](../../../../game-forge/guides/07-ecs-guide.md)
+- [Reference implementation](../../../../game-forge/ecs/world.mjs)

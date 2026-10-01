@@ -68,5 +68,5 @@ const animate = () => {
 
 ## References
 
-- [Performance Optimization](../../../FLAT-LIBRARY/three-core/06-performance/)
-- [Mobile Optimization](../../../FLAT-LIBRARY/game-qa-audit/mobile-optimization/)
+- [Performance](../../../../game-forge/guides/09-performance.md)
+- [Release QA checklist](../../../../game-forge/guides/11-qa-checklist.md)

@@ -59,4 +59,4 @@ scene.onFrame = (delta) => {
 
 ## References
 
-- [Three.js Fundamentals](../../../FLAT-LIBRARY/three-core/01-fundamentals/)
+- [Scene and renderer](../../../../game-forge/guides/01-scene-and-renderer.md)

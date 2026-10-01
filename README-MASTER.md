@@ -20,18 +20,13 @@ All wired into **SHADDAI's MCP** so agents (TURTLE, NEXUS) can build games for y
 
 ## 🚀 Quick Start (Pick Your Path)
 
-### Path 1: "Just Build Me a Game" → GENRE-TEMPLATES
+### Path 1: "Just Build Me a Game" → GAME FORGE
 
 ```bash
-# Copy a scaffold for your game type
-cp -r GENRE-TEMPLATES/3d-action/ my-game
-cd my-game
-npm install
-npm run dev
-# That's it — you have a playable game framework
+node game-forge/ecs/world.test.mjs      # ECS, fixed-step loop, collision, clips, input — all tested
 ```
 
-**Best for:** Fast prototyping, learning by example, shipping quickly
+Use the building blocks in `game-forge/` and the 15 guides; ask TURTLE: *use shaddai_turtle_build to make a [genre] game*.
 
 **Start here:** [GENRE-TEMPLATES/START-HERE.md](./GENRE-TEMPLATES/START-HERE.md)
 
@@ -116,14 +111,12 @@ shaddai-threejs-gamedev-master/
 
 ## 🎯 Three Ways to Use This Repo
 
-### 1️⃣ Copy Scaffolds (Fastest)
+### 1️⃣ Use Game Forge (Fastest)
 
-Pick a game type, copy the scaffold folder, customize it.
+Pick the building blocks you need from `game-forge/` and follow the matching guides.
 
 ```bash
-cp -r GENRE-TEMPLATES/arcade-game/ my-space-invaders
-cd my-space-invaders
-npm install && npm run dev
+node game-forge/runtime/runtime.test.mjs   # fixed-step loop, collision, clips, input
 ```
 
 **Result:** Playable game framework in 5 minutes  
@@ -219,14 +212,11 @@ Every agent in the SHADDAI system is wired into this repo via MCP:
 cd GENRE-TEMPLATES/
 cat START-HERE.md  # Read the guide
 
-# 2. Copy the scaffold
-cp -r arcade-game/ ~/my-arcade-game
-cd ~/my-arcade-game
+# 2. Take the building blocks
+ls ../game-forge/        # ecs/, runtime/, guides/
 
-# 3. Start coding
-npm install
-npm run dev
-# Opens http://localhost:5173 with your game
+# 3. Read the guide for your genre, then build
+# (ask TURTLE: use shaddai_turtle_build)
 ```
 
 ### Option B: Learn from FLAT-LIBRARY
@@ -287,7 +277,7 @@ Each type has a complete scaffold with physics, animation, and architecture pre-
 
 ## 📄 License
 
-**MIT License © 2026 SHADDAI Empire.** Free to use, fork, and build with — just keep the copyright notice. Bundled 3D assets carry their own permissive licenses — see [ATTRIBUTION.md](./GENRE-TEMPLATES/3d-action/examples/3d-asset-test/public/assets/models/ATTRIBUTION.md).
+**MIT License © 2026 SHADDAI Empire.** Free to use, fork, and build with — just keep the copyright notice. This repository contains no bundled 3D models or third-party game assets.
 
 ---
 

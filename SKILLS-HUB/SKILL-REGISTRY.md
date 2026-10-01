@@ -69,6 +69,6 @@ TURTLE, build me a 3d-action scaffold using /threejs-physics
 
 ## References
 
-- [Skills Hub](./SKILLS-HUB-README.md)
+- [Game Forge](../game-forge/README.md)
 - [Flat Library](../FLAT-LIBRARY/)
 - [Genre Templates](../GENRE-TEMPLATES/)
